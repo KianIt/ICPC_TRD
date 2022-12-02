@@ -10,6 +10,10 @@ n! \approx \sqrt{2\pi n}\frac{n}{e} ^ n\\$
 $\\
 \textbf{Euler's theorem.}\\
 a^{\phi(m)} \equiv 1 \bmod m$, $gcd(a,m) = 1\\$
- $\\
+$\\
 \textbf{Ferma's little theorem.}\\
-a^{p - 1} \equiv 1 \bmod p$, $gcd(a,p) = 1$, $p$ - prime.
+a^{p - 1} \equiv 1 \bmod p$, $gcd(a,p) = 1$, $p$ - prime.$\\$
+$\\
+\textbf{Catalan number.}\\
+C_0 = 0, C_n = \displaystyle\sum_{i = 0}^{n - 1} C_i C_{n - 1 - i}\\
+C_n = \frac{2(2n - 1)}{n + 1}C_{n - 1}\\$
