@@ -1,0 +1,15 @@
+$\\
+\textbf{Combinations.}\\
+C_n^k = \frac{n!}{(n - k)!k!}\\
+C_n^0 + C_n^1 + ... + C_n^n = 2^n\\
+C_{n + 1}^{k + 1} = C_n^{k + 1} + C_n^k\\
+C_n^k = \frac{n}{k}C_{n - 1}^{k - 1}\\$
+$\\
+\textbf{Striling approximation.}\\
+n! \approx \sqrt{2\pi n}\frac{n}{e} ^ n\\$
+$\\
+\textbf{Euler's theorem.}\\
+a^{\phi(m)} \equiv 1 \bmod m$, $gcd(a,m) = 1\\$
+ $\\
+\textbf{Ferma's little theorem.}\\
+a^{p - 1} \equiv 1 \bmod p$, $gcd(a,p) = 1$, $p$ - prime.

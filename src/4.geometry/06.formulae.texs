@@ -1,18 +1,42 @@
-Triangles.$\\$
-Radius of circumscribed circle: $R = \frac{abc}{4S}$.$\\$
-Radius of inscribed circle: $r = \frac{S}{p}$.$\\$
-Side via medians: $a = \frac{2}{3}\sqrt{2(m_b^2 + m_c^2) - m_a^2}$.$\\$
-Median via sides: $m_a = \frac{1}{2}\sqrt{2(b^2 + c^2) - a^2}$.$\\$
-Bisector via sides: $l_a = \frac{2\sqrt{bcp(p-a)}}{b + c}$.$\\$
-Bisector via two sides and angle: $l_a = \frac{2bc\cos{\frac{\alpha}{2}}}{b + c}$.$\\$
-$\\$
-Right triangles.$\\$
-Let $a, b$ and $c$ - cathets and hypotenuse, $h$ - hegiht to hypotenuse, dividing $c$ to $c_a$ and $c_b$.$\\$ 
-Then $h^2 = c_a \cdot c_b$, $a^2 = c_a \cdot c$, $b^2 = c_b \cdot c$.$\\$
-$\\$
-Quadrangles.$\\$
-Sides of circumscribed quadrangle: $ a + c = b + d $.$\\$
-Square of circumscribed quadrangle: $S = \frac{Pr}{2}$.$\\$
-Angles of inscribed quadrangle: $\alpha + \gamma = \beta + \delta = 180^{\circ}$.$\\$
-Square of inscribed quadrangle: $S = \sqrt{(p - a)(p - b)(p - c)(p - d)}$.$\\$
-$\\$
+$\\
+\textbf{Triangles.}\\
+\textit{Radius of circumscribed circle:}\\R = \frac{abc}{4S}.\\
+\textit{Radius of inscribed circle:}\\ r = \frac{S}{p}.\\
+\textit{Side via medians:}\\ a = \frac{2}{3}\sqrt{2(m_b^2 + m_c^2) - m_a^2}.\\
+\textit{Median via sides:}\\ m_a = \frac{1}{2}\sqrt{2(b^2 + c^2) - a^2}.\\
+\textit{Bisector via sides:}\\ l_a = \frac{2\sqrt{bcp(p-a)}}{b + c}.\\
+\textit{Bisector via two sides and angle:}\\ l_a = \frac{2bc\cos{\frac{\alpha}{2}}}{b + c}.\\$
+$\\
+\textbf{Right triangles}.\\$
+Let $a$, $b$ and $c$ - cathets and hypotenuse, $h$ - height to hypotenuse, dividing $c$ to $c_a$ and $c_b$.$\\$
+Then$\\$ 
+$h^2 = c_a \cdot c_b,\\ a^2 = c_a \cdot c,\\ b^2 = c_b \cdot c.\\$
+$\\
+\textbf{Quadrangles}.\\
+\textit{Sides of circumscribed quadrangle:}\\ a + c = b + d.\\
+\textit{Square of circumscribed quadrangle:}\\ S = \frac{Pr}{2} = pr.\\
+\textit{Angles of inscribed quadrangle:}\\ \alpha + \gamma = \beta + \delta = 180^{\circ}.\\
+\textit{Square of inscribed quadrangle:}\\ S = \sqrt{(p - a)(p - b)(p - c)(p - d)}.\\$
+$\\
+\textbf{Circles}.\\
+\textit{Intersection of circle and line:}\\
+\begin{cases}
+(x - x_0)^2 + (y - y_0)^2 = R^2\\
+y = ax + b\\
+\end{cases}\\
+(x - x_0)^2 + (ax + b - y_0)^2 = R^2\\
+(1 + a^2)x^2 + (2a(b - y_0) - 2x_0)x + (x_0^2 + (b - y_0)^2 - R^2) = 0\\$
+Intersection points are solution of equation.
+If discriminant D < 0 then there are no intesection points.
+If discriminant D = 0 then there is one intersection point.
+If discriminant D > 0 then there are two intersection point.
+$\\
+\textit{Intersection of circle and circle:}\\
+\begin{cases}
+(x - x_0)^2 + (y - y_0)^2 = R_0^2\\
+(x - x_1)^2 + (y - y_1)^2 = R_1^2\\
+\end{cases}\\
+2(x_0 - x_1)x + 2(y_0 - y_1)y = (R_1^2 - R_0^2) + (x_0^2 - x_1^2) + (y_0^2 - y_1^2)\\
+y = \frac{1}{2}\frac{(R_1^2 - R_0^2) + (x_0^2 - x_1^2) + (y_0^2 - y_1^2)}{y_0 - y_1} - \frac{x_0 - x_1}{y_0 - y_1}x\\
+$
+Task comes to intersection of circle and line.
