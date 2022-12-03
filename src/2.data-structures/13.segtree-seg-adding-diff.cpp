@@ -1,4 +1,4 @@
-struct seg_adding_tree {
+struct seg_adding_tree_diff {
     // sum_tree + difference array
     void add(int i, int v, int x, int lx, int rx) {
         if (rx - lx == 1) {

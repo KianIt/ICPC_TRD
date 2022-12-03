@@ -8,21 +8,6 @@ struct lazy_seg_tree {
         tree.assign(2 * size - 1, 0);
         lazy.assign(2 * size - 1, 0);
     }
-    void build(vector<int> &a, int x, int lx, int rx) {
-        if (rx - lx == 1) {
-            if (lx < a.size())
-                tree[x] = a[lx];
-            return;
-        }
-        int m = (lx + rx) / 2;
-        build(a, 2 * x + 1, lx, m);
-        build(a, 2 * x + 2, m, rx);
-        tree[x] = tree[2 * x + 1] + tree[2 * x + 2];
-    }
-    void build(vector<int> &a) {
-        init(a.size());
-        build(a, 0, 0, size);
-    }
     void push(int x) {
         tree[2 * x + 1] = lazy[x];
         lazy[2 * x + 1] = lazy[x];

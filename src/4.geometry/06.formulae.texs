@@ -5,7 +5,8 @@ $\\
 \textit{Side via medians:}\\ a = \frac{2}{3}\sqrt{2(m_b^2 + m_c^2) - m_a^2}.\\
 \textit{Median via sides:}\\ m_a = \frac{1}{2}\sqrt{2(b^2 + c^2) - a^2}.\\
 \textit{Bisector via sides:}\\ l_a = \frac{2\sqrt{bcp(p-a)}}{b + c}.\\
-\textit{Bisector via two sides and angle:}\\ l_a = \frac{2bc\cos{\frac{\alpha}{2}}}{b + c}.\\$
+\textit{Bisector via two sides and angle:}\\ l_a = \frac{2bc\cos{\frac{\alpha}{2}}}{b + c}.\\
+\textit{Bisector via two sides and divided side:}\\ l_a = \sqrt{bc - a_b a_c}.\\$
 $\\
 \textbf{Right triangles}.\\$
 Let $a$, $b$ and $c$ - cathets and hypotenuse, $h$ - height to hypotenuse, dividing $c$ to $c_a$ and $c_b$.$\\$
