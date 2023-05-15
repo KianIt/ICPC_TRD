@@ -38,7 +38,7 @@ ofstream out("output.txt");
 // random generator
 random_device rdev;
 mt19937 reng(rdev());
-uniform_int_distribution<mt19937::result_type> dist(1, 1e9 + 1);
+uniform_int_distribution<mt19937::result_type> dist(1, 1e9 + 7);
 ///////////////////////////////////////////
 
 // structures
