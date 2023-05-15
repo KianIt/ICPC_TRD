@@ -2,12 +2,17 @@
 // Alrotihm: Fast Fourier Transform
 // Complexity: O(N*log(N))
 
-const int mod = 7340033;                        // Module (7 * 2^20 + 1)
-const int proot = 5;                            // Primery Root (5 ^ (2^20) == 1 mod 7340033)
+const int mod = 7340033;                        // Module (7 * (2 ^ 20) + 1)
+const int proot = 5;                            // Primary Root (5 ^ (2 ^ 20) == 1 mod 7340033)
 const int proot_1 = 4404020;                    // Inverse Primary Root (5 * 4404020 == 1 mod 7340033)
 const int pw = 1 << 20;                         // Maximum Degree Of Two (2 ^ 20)
 
-auto fft(vector<int> &a, bool invert = 0) { 
+// const int mod = 998244353;                      // Module (7 * 17 * (2 ^ 23) + 1)
+// const int proot = 31;                           // Primary Root (31 ^ (2 ^ 23) == 1 mod 998244353)
+// const int proot_1 = 128805723;                  // Inverse Primary Root (31 * 128805723 == 1 mod 998244353)
+// const int pw = 1 << 23;                         // Maximum Degree Of Two (2 ^ 23)
+
+auto fft(vector<int> &a, bool invert = 0) {
     int n = a.size();                           // n = 2 ^ x
 
     for (int i = 1, j = 0; i < n; i++) {        // Bit-Reversal Permutation (0000, 1000, 0100, 1100, 0010, ...)
@@ -17,7 +22,7 @@ auto fft(vector<int> &a, bool invert = 0) {
         if (i < j) swap(a[i], a[j]);
     }
 
-    for (int len = 2; len <= n; len <<= 1) {    
+    for (int len = 2; len <= n; len <<= 1) {
         int lroot = invert ? proot_1 : proot;  // Prmary Root Or Inverse Root (Inverse Transform)
 
         for (int i = len; i < pw; i <<= 1)
@@ -31,7 +36,7 @@ auto fft(vector<int> &a, bool invert = 0) {
                 a[i + j + len / 2] = (u - v + mod) % mod;
                 root = (root * lroot) % mod;
             }
-            
+
         }
     }
 
