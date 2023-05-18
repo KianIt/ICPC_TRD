@@ -12,7 +12,7 @@ const int pw = 1 << 20;                         // Maximum Degree Of Two (2 ^ 20
 // const int proot_1 = 128805723;                  // Inverse Primary Root (31 * 128805723 == 1 mod 998244353)
 // const int pw = 1 << 23;                         // Maximum Degree Of Two (2 ^ 23)
 
-auto fft(vector<int> &a, bool invert = 0) {
+auto fft(vector<int> &a, bool invert = 0) { 
     int n = a.size();                           // n = 2 ^ x
 
     for (int i = 1, j = 0; i < n; i++) {        // Bit-Reversal Permutation (0000, 1000, 0100, 1100, 0010, ...)
@@ -22,7 +22,7 @@ auto fft(vector<int> &a, bool invert = 0) {
         if (i < j) swap(a[i], a[j]);
     }
 
-    for (int len = 2; len <= n; len <<= 1) {
+    for (int len = 2; len <= n; len <<= 1) {    
         int lroot = invert ? proot_1 : proot;  // Prmary Root Or Inverse Root (Inverse Transform)
 
         for (int i = len; i < pw; i <<= 1)
@@ -36,7 +36,7 @@ auto fft(vector<int> &a, bool invert = 0) {
                 a[i + j + len / 2] = (u - v + mod) % mod;
                 root = (root * lroot) % mod;
             }
-
+            
         }
     }
 
