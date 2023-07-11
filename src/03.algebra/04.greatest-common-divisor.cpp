@@ -11,6 +11,7 @@ int gcd(int a, int b) {
 
 // Alrotihm: Extended Euclidean Algorithm
 // Complexity: O(log(N))
+
 // Idea
 // d = gcd(a, b)
 // x * a + y * b = d

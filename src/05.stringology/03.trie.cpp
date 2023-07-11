@@ -3,15 +3,19 @@
 // Complexity: O(N)
 
 struct trie {
-    struct vertex {                 // Vertex
+    // Vertex
+    struct vertex {
         vector<int> next;
         bool leaf;
     };
 
-    static const int K = 26;        // Alphabet size
-    static const int N = 2e5 + 1;   // Maximum Vertex Number
+    // Alphabet size
+    static const int K = 26;
+    // Maximum Vertex Number
+    static const int N = 2e5 + 1;
 
-    vector<vertex> t;               // Vertices Vector
+    // Vertices Vector
+    vector<vertex> t;
     int sz;
 
     trie(): sz(1) {

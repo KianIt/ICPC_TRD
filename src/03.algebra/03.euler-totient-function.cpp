@@ -1,6 +1,7 @@
 // Theme: Euler's Totient Function
 // Alrotihm: Euler's Product Formula
 // Complexity: O(sqrt(N))
+
 // Idea: 
 // phi = n(1 - 1 / pi), i = 1,...
 

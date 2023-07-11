@@ -34,7 +34,7 @@ auto factors_sieve(int n) {
 }
 
 // Alrotihm: Factorization With Primes
-// Complexity: O(sqrt(N)/log(qsrt(N)))
+// Complexity: O(sqrt(N)/log(sqrt(N)))
 
 auto factors_primes(int n) {
     vector<int> factors, primes = get_primes(n + 1);
@@ -95,7 +95,7 @@ int pollard_rho(int n) {
     return g;
 }
 
-// Alrotihm: Factorization With Pollard's Rho And Ferma's Test
+// Alrotihm: Pollard's Rho Factorization + Ferma's Test
 // Complexity: O(N^(1/4)*log(N))
 
 void factors_pollard_rho(int n, vector<int> &factors) {

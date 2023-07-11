@@ -1,16 +1,21 @@
 // Theme: Integer Numbers Decomposition With Composite Module
 
-int m;                  // Module
-vector<int> p;          // Prime Divisors Of Module
-                        // m = (p1 ^ m1) * (p2 ^ m2) * ... * (pn ^ mn)
+// Module
+// m = (p1 ^ m1) * (p2 ^ m2) * ... * (pn ^ mn)
+int m;                  
+// Prime Divisors Of Module
+vector<int> p;          
+ 
 
 struct num {
-    int x;              // GCD(x, m) = 1
-    vector<int> a;      // Powers Of Primes 
-                        // n = (p1 ^ a1) * (p2 ^ a2) * ... * (pn ^ an) * x
-
+	// GCD(x, m) = 1
+    int x;    
+	// Powers Of Primes
+    vector<int> a;       
+                       
     num() : x(0), a(vector<int>(p.size())) { }
 
+	// n = (p1 ^ a1) * (p2 ^ a2) * ... * (pn ^ an) * x
     num(int n) : x(0), a(vector<int>(p.size())) {
         if (!n) return;
         for (int i = 0; i < p.size(); i++) {

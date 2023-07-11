@@ -16,7 +16,8 @@ auto matrmul(matrix<int> &a, matrix<int> &b, int p) {
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
             for (int z = 0; z < k; z++)
-                res[i][j] = p ? (res[i][j] + a[i][z] * b[z][j] % p) % p : (res[i][j] + a[i][z] * b[z][j]);
+                res[i][j] = p ? (res[i][j] + a[i][z] * b[z][j] % p) % p
+                : (res[i][j] + a[i][z] * b[z][j]);
 
     return res;
 }
@@ -31,7 +32,8 @@ auto matrmul(matrix<int> &a, row<int> &b, int p) {
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
-            res[i] = p ? (res[i] + a[i][j] * b[j] % p) % p : (res[i] + a[i][j] * b[j]);
+            res[i] = p ? (res[i] + a[i][j] * b[j] % p) % p
+            : (res[i] + a[i][j] * b[j]);
 
     return res;
 }
@@ -45,10 +47,10 @@ auto matrbinpow(matrix<int> a, int x, int p = 0) {
     matrix<int> res(n, row<int>(n));
     for (int i = 0; i < n; i++) res[i][i] = 1;
 
-    while (n) {
-        if (n & 1) res = matrmul(res, a, p);
+    while (x) {
+        if (x & 1) res = matrmul(res, a, p);
         a = matrmul(a, a, p);
-        n >>= 1;
+        x >>= 1;
     }
 
     return res;

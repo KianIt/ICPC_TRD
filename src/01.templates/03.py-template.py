@@ -10,14 +10,13 @@ def inpt():
 input = inpt
 
 
-inf = 1e18;
+INF = 1e18;
 
-# mod = 1e9 + 7
-# pmod = 1e9 + 6
+# MOD = 1e9 + 7
+# PMOD = 1e9 + 6
 
-# mod = 998244353
-# pmod = 998244352
-# root = 3
+# MOD = 998244353
+# PMOD = 998244352
 
 
 def solve():
