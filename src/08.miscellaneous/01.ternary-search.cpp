@@ -1,14 +1,18 @@
 // Theme: Ternary Search
 
-// Alrotihm: Continuous Ternary Search With Goled Ratio
+// Algorithm: Continuous Search With Golden Ratio
 // Complexity: O(log(N))
 
-double phi = (1 + sqrt(5)) / 2;   // Golden Ratio
+// Golden Ratio
+// Phi = 1.618...
+double phi = (1 + sqrt(5)) / 2;
 
-double cont_ternary_search(double l, double r) {
-  double m1 = l + (r - l) / (1 + phi), m2 = r - (r - l) / (1 + phi);
+double cont_tern_srch(double l, double r) {
+  double m1 = l + (r - l) / (1 + phi),
+    m2 = r - (r - l) / (1 + phi);
+
   double f1 = f(m1), f2 = f(m2);
-  
+
   int count = 200;
   while (count--) {
     if (f1 < f2) {
@@ -26,24 +30,22 @@ double cont_ternary_search(double l, double r) {
       f2 = f(m2);
     }
   }
-  
+
   return f((l + r) / 2);
 }
 
-// Alrotihm: Descrete Ternary Search 
+// Algorithm: Discrete Search 
 // Complexity: O(log(N))
 
-double discr_ternary_search(int l, int r) {
-  int m1 = l + (r - l) / 3, m2 = r - (r - l) / 3;
-  
+double discr_tern_srch(int l, int r) {
   while (r - l > 2) {
+    int m1 = l + (r - l) / 3,
+      m2 = r - (r - l) / 3;
     if (f(m1) < f(m2))
       r = m2;
     else
       l = m1;
-    m1 = l + (r - l) / 3;
-    m2 = r - (r - l) / 3;
   }
-  
+
   return min(f(l), min(f(l + 1), f(r)));
 }

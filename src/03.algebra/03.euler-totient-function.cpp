@@ -1,10 +1,9 @@
-// Theme: Euler's Totient Function
-// Alrotihm: Euler's Product Formula
+// Theme: Euler Totient Function
+
+// Algorithm: Euler Product Formula
 // Complexity: O(sqrt(N))
 
-// Idea: 
 // phi = n(1 - 1 / pi), i = 1,...
-
 int phi(int n) {
     if (n == 1) return 1;
     

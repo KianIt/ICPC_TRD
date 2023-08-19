@@ -5,10 +5,10 @@ using row = vector<T>;
 template <typename T>
 using matrix = vector<vector<T>>;
 
-// Alrotihm: Matrix-Matrix Multiplication
+// Algorithm: Matrix-Matrix Multiplication
 // Complexity: O(N*K*M)
 
-auto matrmul(matrix<int> &a, matrix<int> &b, int p) {
+auto m_prod(matrix<int> &a, matrix<int> &b, int p = 0) {
     int n = a.size(), k = a[0].size(), m = b[0].size();
 
     matrix<int> res(n, row<int>(m));
@@ -22,10 +22,10 @@ auto matrmul(matrix<int> &a, matrix<int> &b, int p) {
     return res;
 }
 
-// Alrotihm: Matrix-Vector Multiplication
+// Algorithm: Matrix-Vector Multiplication
 // Complexity: O(N*M)
 
-auto matrmul(matrix<int> &a, row<int> &b, int p) {
+auto m_prod(matrix<int> &a, row<int> &b, int p = 0) {
     int n = a.size(), m = b.size();
 
     row<int> res(n);
@@ -38,18 +38,18 @@ auto matrmul(matrix<int> &a, row<int> &b, int p) {
     return res;
 }
 
-// Alrotihm: Fast Matrix Exponentiation
-// Complexity: O(N^3*log(N))
+// Algorithm: Fast Matrix Exponentiation
+// Complexity: O(N^3*log(K))
 
-auto matrbinpow(matrix<int> a, int x, int p = 0) {
+auto m_binpow(matrix<int> a, int x, int p = 0) {
     int n = a.size();
 
     matrix<int> res(n, row<int>(n));
     for (int i = 0; i < n; i++) res[i][i] = 1;
 
     while (x) {
-        if (x & 1) res = matrmul(res, a, p);
-        a = matrmul(a, a, p);
+        if (x & 1) res = m_prod(res, a, p);
+        a = m_prod(a, a, p);
         x >>= 1;
     }
 

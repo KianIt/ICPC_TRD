@@ -1,6 +1,6 @@
 // Theme: Combination Number
 
-// Alrotihm: Online Multiplication-Division
+// Algorithm: Online Multiplication-Division
 // Complexity: O(k)
 
 // C_n^k - from n by k
@@ -15,7 +15,7 @@ int C(int n, int k) {
     return res;
 }
 
-// Alrotihm: Pascal Triangle Preprocessing
+// Algorithm: Pascal Triangle Preprocessing
 // Complexity: O(N^2)
 
 auto pascal(int n) {

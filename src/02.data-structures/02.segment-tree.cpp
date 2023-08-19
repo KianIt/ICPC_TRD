@@ -25,7 +25,7 @@ struct segtree {
         build(a, 0, 0, size);
     }
 
-    // O(log(n))
+    // Complexity: O(log(n))
     void set(int i, int v, int x, int lx, int rx) {
         if (rx - lx == 1) {
             tree[x] = v;
@@ -40,7 +40,7 @@ struct segtree {
         set(i, v, 0, 0, size);
     }
 
-    // O(log(n))
+    // Complexity: O(log(n))
     int sum(int l, int r, int x, int lx, int rx) {
         if (l <= lx && rx <= r) return tree[x];
         if (l >= rx || r <= lx) return 0;

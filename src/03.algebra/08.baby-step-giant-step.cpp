@@ -1,12 +1,11 @@
 // Theme: Descrete Logarithm
-// Alrotihm: Baby-Step Giant-Step Algorithm
+
+// Algorithm: Baby-Step Giant-Step Algorithm
 // Complexity: O(sqrt(p)*log(p))
 
-// Idea: 
 // a ^ (x) = b (mod p), (a, p) = 1
 // a ^ (i * m + j) = b (mod p), m = ceil(sqrt(p))
 // a ^ (i * m) = b * a ^ (-j) (mod p)
-
 int baby_giant_step(int a, int b, int p) {
     // a ^ (-1) = a ^ (p - 2) mod p 
     int m = ceil(sqrt(p)), _a = binpow(a, p - 2, p);

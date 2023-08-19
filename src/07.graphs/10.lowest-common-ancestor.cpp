@@ -1,46 +1,48 @@
-// Theme: Minimum Spanning Tree
-// Algorithm: Binary Lifting Method
-// Complexity: O(N * log(N) + log(N))
+// Theme: Lowest Common Ancestor
 
-vector<vector<int>> g;      // Graph
-vector<vector<int>> up;     // Ancestors
-vector<int> tin, tout;      // Enter And Exit Time
+// Algorithm: Binary Lifting
+// Complextiry: O(N * log(N) * log(N))
 
-int timer;                  // Timer
+vector<vector<int>> graph;
+vector<vector<int>> up;
+vector<int> tin, tout;
 
-int l;                      // l == log(N) (~20)
+int timer;
 
-void dfs(int v, int p = -1) {
-    tin[v] = timer++;
-    
-    up[v][0] = p;
+// l == log(N) (~20)
+int l;
+
+void dfs(int cur, int p = -1) {
+    tin[cur] = timer++;
+
+    up[cur][0] = p;
     for (int i = 1; i <= l; i++)
-        up[v][i] = up[up[v][i - 1]][i - 1];
+        up[cur][i] = up[up[cur][i - 1]][i - 1];
 
-    for (auto &to : g[v]) {
+    for (auto &to : graph[cur]) {
         if (to == p) continue;
-        dfs(to, v);
+        dfs(to, cur);
     }
 
-    tout[v] = timer++;
+    tout[cur] = timer++;
 }
 
-void preprocess(int n, int r) {
-    l = (int) ceil(log2(n));
-    up.assign(n, vector<int>(l + 1));
+void preprocess(int u) {
+    l = (int) ceil(log2(sz));
+    up.assign(sz, vector<int>(l + 1));
     timer = 0;
-    dfs(r, r);
+    dfs(u, u);
 }
 
-bool is_anc(int v, int u) {
-    return tin[v] <= tin[u] && tout[v] >= tout[u];
+bool is_anc(int u, int v) {
+    return tin[u] <= tin[v] && tout[u] >= tout[v];
 }
 
-int lca(int v, int u) {
+int lca(int u, int v) {
+    if (is_anc(u, v))
+        return v;
     if (is_anc(v, u))
         return v;
-    if (is_anc(u, v))
-        return u;
     for (int i = l; i >= 0; --i) {
         if (!is_anc(up[v][i], u))
             v = up[v][i];

@@ -1,6 +1,6 @@
 // Theme: Prime Numbers
 
-// Alrotihm: Eratosthenes' Sieve
+// Algorithm: Eratosthenes Sieve
 // Complexity: O(N*log(log(N)))
 
 //  = 0 - Prime, 
@@ -9,7 +9,7 @@ auto get_sieve(int n) {
     vector<int> sieve(n);  // Sieve
     sieve[0] = sieve[1] = 1;
 
-    for (int i = 2; i * i <= n; i++)
+    for (int i = 2; i * i < n; i++)
         if (!sieve[i])
             for (int j = i * i; j < n; j += i)
                 sieve[j] = i;
@@ -17,7 +17,7 @@ auto get_sieve(int n) {
     return sieve;
 }
 
-// Alrotihm: Prime Numbers Wirh Sieve
+// Algorithm: Prime Numbers With Sieve
 // Complexity: O(N*log(log(N)))
 
 auto get_primes(int n) {
@@ -30,23 +30,24 @@ auto get_primes(int n) {
     return primes;
 }
 
-// Alrotihm: Linear Eratosthenes' Sieve
+// Algorithm: Linear Algorithm
 // Complexity: O(N)
 
+// lp[i] = Lowest Prime Divisor
 auto get_sieve_primes(int n, vector<int> &primes) {
-    vector<int> sieve(n);
-    sieve[0] = sieve[1] = 1;
+    vector<int> lp(n);
+    lp[0] = lp[1] = 1;
 
-    for (int i = 2; i <= n; i++) {
-        if (!sieve[i]) {
-            sieve[i] = i;
+    for (int i = 2; i < n; i++) {
+        if (!lp[i]) {
+            lp[i] = i;
             primes.push_back(i);
         }
         for (int j = 0; j < primes.size() &&
-                    primes[j] <= sieve[i] &&
+                    primes[j] <= lp[i] &&
                     i * primes[j] < n; j++)
-            sieve[i * primes[j]] = primes[j];
+            lp[i * primes[j]] = primes[j];
     }
 
-    return sieve;
+    return lp;
 }

@@ -1,9 +1,10 @@
 // Theme: Prefix function
-// Alrotihm: Prefix Function Algoritms
+
+// Algorithm: Knuth-Morris-Pratt Algorithm
 // Complexity: O(N)
 
 auto pref_func(const string &s) {
-    int n = s.length();
+    int n = s.size();
     vector<int> pi(n);
 
     for (int i = 1; i < n; i++) {

@@ -1,16 +1,19 @@
-// suffix array algo with count sort
+// Theme: Suffix array
+
+// Algorithm: Binary Algorithm With Count Sort
+// Complexity: O(N*log(N))
 
 void count_sort(vector<int> &p, vector<int> &c) {
     int n = p.size();
     vector<int> cnt(n), p_new(n), pos(n);
 
-    for (auto x : c) cnt[x]++;
+    for (auto &x : c) cnt[x]++;
 
     pos[0] = 0;
     for (int i = 1; i < n; i++)
         pos[i] = pos[i - 1] + cnt[i - 1];
 
-    for (auto x : p) {
+    for (auto &x : p) {
         int i = c[x];
         p_new[pos[i]] = x;
         pos[i]++;
@@ -21,7 +24,7 @@ void count_sort(vector<int> &p, vector<int> &c) {
 
 auto suffix_array(const string &str) {
     string s = str + '$';
-    int n = s.length();
+    int n = s.size();
 
     vector<int> p(n), c(n);
     vector<pair<char, int>> a(n);

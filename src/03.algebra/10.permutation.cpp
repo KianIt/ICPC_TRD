@@ -1,5 +1,6 @@
 // Theme: Permmutations
-// Alrotihm: Next Lexicological Permutation
+
+// Algorithm: Next Lexicological Permutation
 // Complexity: O(N)
 
 bool perm(vector<int> &v) {

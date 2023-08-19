@@ -10,13 +10,9 @@ def inpt():
 input = inpt
 
 
-INF = 1e18;
-
-# MOD = 1e9 + 7
-# PMOD = 1e9 + 6
-
+INF = int(1e18)
+# MOD = int(1e9 + 7)
 # MOD = 998244353
-# PMOD = 998244352
 
 
 def solve():
@@ -24,6 +20,6 @@ def solve():
 
 
 t = 1
-# t = int(input())
+t = int(input())
 for _ in range(t):
     solve()

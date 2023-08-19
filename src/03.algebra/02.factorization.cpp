@@ -1,6 +1,6 @@
 // Theme: Factorization
 
-// Alrotihm: Trivial Algorithm
+// Algorithm: Trivial Algorithm
 // Complexity: O(sqrt(N))
 
 auto factors(int n) {
@@ -12,32 +12,36 @@ auto factors(int n) {
         factors.push_back(i);
     }
 
-    if (n != 1) factors.push_back(n);
+    if (n != 1)
+        factors.push_back(n);
 
     return factors;
 }
 
-// Alrotihm: Factorization With Sieve
+// Algorithm: Factorization With Sieve
 // Complexity: O(N*log(log(N)))
 
 auto factors_sieve(int n) {
-    vector<int> factors, sieve = get_sieve(n + 1);
+    vector<int> factors,
+        sieve = get_sieve(n + 1);
 
     while (sieve[n]) {
         factors.push_back(sieve[n]);
         n /= sieve[n];
     }
 
-    if (n != 1) factors.push_back(n);
+    if (n != 1)
+        factors.push_back(n);
 
     return factors;
 }
 
-// Alrotihm: Factorization With Primes
+// Algorithm: Factorization With Primes
 // Complexity: O(sqrt(N)/log(sqrt(N)))
 
 auto factors_primes(int n) {
-    vector<int> factors, primes = get_primes(n + 1);
+    vector<int> factors,
+        primes = get_primes(n + 1);
 
     for (auto &i : primes) {
         if (i * i > n) break;
@@ -46,12 +50,13 @@ auto factors_primes(int n) {
         factors.push_back(i);
     }
 
-    if (n != 1) factors.push_back(n);
+    if (n != 1)
+        factors.push_back(n);
 
     return factors;
 }
 
-// Alrotihm: Ferma's Test
+// Algorithm: Ferma Test
 // Complexity: O(K*log(N))
 
 bool ferma(int n) {
@@ -69,7 +74,7 @@ bool ferma(int n) {
     return true;
 }
 
-// Alrotihm: Pollard's Rho Algorithm
+// Algorithm: Pollard Rho Algorithm
 // Complexity: O(N^(1/4))
 
 int f(int x, int c, int n) {
@@ -95,7 +100,7 @@ int pollard_rho(int n) {
     return g;
 }
 
-// Alrotihm: Pollard's Rho Factorization + Ferma's Test
+// Algorithm: Pollard Rho Factorization + Ferma Test
 // Complexity: O(N^(1/4)*log(N))
 
 void factors_pollard_rho(int n, vector<int> &factors) {

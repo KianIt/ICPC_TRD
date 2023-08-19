@@ -1,13 +1,14 @@
 // Theme: Longest Increasing Subsequence
-// Alrotihm: Binary Search Algorithm
-// Complexity: O(N)
 
-auto inc_seq(const vector<int> &a) {
+// Algorithm: Binary Search Algorithm
+// Complexity: O(N*log(N))
+
+auto inc_subseq(const vector<int> &a) {
     int n = a.size();
-    vector<int> dp(n + 1, inf), pos(n + 1), prev(n), path;
+    vector<int> dp(n + 1, INF), pos(n + 1), prev(n), subseq;
 
     int len = 0;
-    dp[0] = -inf;
+    dp[0] = -INF;
     pos[0] = -1;
 
     for (int i = 0; i < n; i++) {
@@ -22,10 +23,10 @@ auto inc_seq(const vector<int> &a) {
 
     int p = pos[len];
     while (p != -1) {
-        path.push_back(a[p]);
+        subseq.push_back(a[p]);
         p = prev[p];
     }
-    reverse(path.begin(), path.end());
+    reverse(subseq.begin(), subseq.end());
 
-    return path;
+    return subseq;
 }

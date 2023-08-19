@@ -1,7 +1,6 @@
 // Theme: Planimetry Objects
 
-// Subtheme: Point
-
+// Point
 template <typename T>
 struct point {
     T x, y;
@@ -10,11 +9,12 @@ struct point {
     point(T x, T y) : x(x), y(y) { }
 };
 
-// Subtheme: Rectangle
 
+// Rectangle
 template <typename T>
 struct rectangle {
     point<T> ld, ru;
 
-    rectangle(const point<T> &ld, const point<T> &ru) : ld(ld), ru(ru) { }
-};                                                                                                                     
+    rectangle(const point<T> &ld, const point<T> &ru) :
+        ld(ld), ru(ru) { }
+};

@@ -1,21 +1,24 @@
 // Theme: Convex Hull
-// Alrotihm: Graham's Algorithm
+
+// Algorithm: Graham Algorithm
 // Complexity: O(N*log(N))
 
 auto graham(const vector<vec<int>> &points) {
     vec<int> p0 = points[0];
     
     for (auto p : points)
-        if (p.y < p0.y || p.y == p0.y && p.x > p0.x) p0 = p;
-    
+        if (p.y < p0.y ||
+        p.y == p0.y && p.x > p0.x)
+            p0 = p;
+
     for (auto &p : points) {
         p.x -= p0.x;
         p.y -= p0.y;
     }
 
     sort(all(points), [] (vec<int> &p1, vec<int> &p2) {
-        return (p1 ^ p2).z > 0 || (p1 ^ p2).z == 0 && p1.norm() > p2.norm();
-    });
+        return (p1 ^ p2).z > 0 ||
+            (p1 ^ p2).z == 0 && p1.norm() > p2.norm(); });
 
     vector<vec<int>> hull;
     for (auto &p : points) {

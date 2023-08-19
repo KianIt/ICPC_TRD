@@ -32,7 +32,7 @@ struct segtree_prop {
         tree[x] = 0;
     }
 
-    // O(log(n))
+    // Complexity: O(log(n))
     void add(int v, int l, int r, int x, int lx, int rx) {
         push(x, lx, rx);
         if (rx <= l || r <= lx) return;
@@ -48,7 +48,7 @@ struct segtree_prop {
         add(v, l, r, 0, 0, size);
     }
 
-    // O(log(n))
+    // Complexity: O(log(n))
     int get(int i, int x, int lx, int rx) {
         push(x, lx, rx);
         if (rx - lx == 1) return tree[x];

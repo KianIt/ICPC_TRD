@@ -1,6 +1,6 @@
 // Theme: Binary Operations
 
-// Alrotihm: Binary Multiplication
+// Algorithm: Binary Multiplication
 // Complexity: O(log(b))
 
 int binmul(int a, int b, int p = 0) {
@@ -13,7 +13,7 @@ int binmul(int a, int b, int p = 0) {
     return res;
 }
 
-// Alrotihm: Binary Exponentiation
+// Algorithm: Binary Exponentiation
 // Complexity: O(log(b))
 
 int binpow(int a, int b, int p = 0) {
