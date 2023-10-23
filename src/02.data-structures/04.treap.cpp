@@ -2,42 +2,29 @@
 
 // Node
 struct node {
-    int key, priorty;
-    shared_ptr<node> left, right;
-
-    node(int key, int priorty = INF) :
+    int key, priority;
+    node *left = nullptr, *right = nullptr;
+    node(int key, int priority = INF) :
         key(key),
-        priorty(priorty == INF ?
-        reng() : priorty) { }
+        priority(priority == INF ? dist(reng) : priority) { }
 };
 
 // Treap
 struct treap {
-    shared_ptr<node> root;
-
+    node *root = nullptr;
     treap() { }
-
-    treap(int root_key, int root_priorty = INF) {
-        root = shared_ptr<node>(new node(root_key, root_priorty));
-    }
-
-    treap(shared_ptr<node> rt) {
-        root = shared_ptr<node>(rt);
-    }
-
-    treap(const treap &tr) {
-        root = shared_ptr<node>(tr.root);
-    }
+    treap(int key, int priority = INF) : root(new node(key, priority)) { }
+    treap(node *rt) : root(rt) { }
+    treap(const treap &tr) : root(tr.root) { }
 
     // Complexity: O(log(N))
     pair<treap, treap> split(int k) {
         auto res = split(root, k);
         return { treap(res.ff), treap(res.ss) };
     }
-
-    pair<shared_ptr<node>, shared_ptr<node>> split(shared_ptr<node> rt, int k) {
+    pair<node *, node *> split(node *rt, int k) {
         if (!rt) return { nullptr, nullptr };
-        else if (rt->key < k) {
+        if (rt->key < k) {
             auto [rt1, rt2] = split(rt->right, k);
             rt->right = rt1;
             return { rt, rt2 };
@@ -50,15 +37,14 @@ struct treap {
     }
 
     // Complexity: O(log(N))
-    treap merge(const treap &tr) {
-        root = shared_ptr<node>(merge(root, tr.root));
+    treap merge(treap tr) {
+        root = merge(root, tr.root);
         return *this;
     }
-
-    shared_ptr<node> merge(shared_ptr<node> rt1, shared_ptr<node> rt2) {
+    node *merge(node *rt1, node *rt2) {
         if (!rt1) return rt2;
         if (!rt2) return rt1;
-        if (rt1->priorty < rt2->priorty) {
+        if (rt1->priority < rt2->priority) {
             rt1->right = merge(rt1->right, rt2);
             return rt1;
         }

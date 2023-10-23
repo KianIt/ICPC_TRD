@@ -2,8 +2,6 @@
 
 using namespace std;
 
-
-
 // DEFINES
 #define precision(x) cout << fixed << setprecision(x);
 #define fast cin.tie(0); ios::sync_with_stdio(0)
@@ -18,45 +16,30 @@ using namespace std;
 #define no "No"
 #define int long long
 
-
-
 // CONSTANTS
 const int INF = 1e18;
+const int MOD = 998244353;
 // const int MOD = 1e9 + 7;
-// const int MOD = 998244353;
-
-
 
 // FSTREAMS
 ifstream in("input.txt");
 ofstream out("output.txt");
 
-
-
 // RANDOM
 const int RMIN = 1, RMAX = 1e9;
-
 random_device rdev;
 mt19937_64 reng(rdev());
 uniform_int_distribution<mt19937_64::result_type> dist(RMIN, RMAX);
 
-
-
 // GLOBALS
-
-
 
 // SOLUTION
 void solve() {
     
 }
 
-
-
 // PREPROCESSING
 void prepr() { }
-
-
 
 // ENTRANCE
 signed main() {
